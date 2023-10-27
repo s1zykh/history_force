@@ -1,0 +1,51 @@
+{
+  "tests": [
+    {
+      "id": 1,
+      "name": "Тест по истории России",
+      "description": "Это описание теста",
+      "Category": {
+        "id": 1,
+        "name": "История России"
+      },
+      "QuestionsAnswers": [
+        {
+          "id": 1,
+          "questionText": "Какого цвета имомбек?",
+          "answerOptions": "Черного, Белого, Смуглого",
+          "correctAnswer": "смуглый"
+        },
+        {
+          "id": 2,
+          "questionText": "Какого цвета имомбек?",
+          "answerOptions": "Черного, Белого, Смуглого",
+          "correctAnswer": "смуглый"
+        },
+        {
+          "id": 3,
+          "questionText": "Какого цвета имомбек?",
+          "answerOptions": "Черного, Белого, Смуглого",
+          "correctAnswer": "смуглый"
+        },
+        {
+          "id": 4,
+          "questionText": "Какого цвета имомбек?",
+          "answerOptions": "Черного, Белого, Смуглого",
+          "correctAnswer": "смуглый"
+        },
+        {
+          "id": 5,
+          "questionText": "Какого цвета имомбек?",
+          "answerOptions": "Черного, Белого, Смуглого",
+          "correctAnswer": "смуглый"
+        },
+        {
+          "id": 6,
+          "questionText": "Какого цвета имомбек?",
+          "answerOptions": "Черного, Белого, Смуглого",
+          "correctAnswer": "смуглый"
+        }
+      ]
+    }
+  ]
+}

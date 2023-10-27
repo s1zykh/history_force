@@ -1,0 +1,32 @@
+.main-container {
+  width: 700px;
+  height: 300px;
+}
+
+.window {
+  width: 700px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.allItems {
+  transition: transform 300ms ease-in-out;
+  display: flex;
+  gap: 100px;
+  height: 100%;
+}
+
+.arrowLeft {
+  cursor: pointer;
+  position: absolute;
+  left: -50px;
+  top: 200px;
+  font-size: 50px;
+}
+.arrowRigt {
+  cursor: pointer;
+  position: absolute;
+  top: 200px;
+  right: -50px;
+  font-size: 50px;
+}

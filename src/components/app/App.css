@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap");
+
+.container {
+  width: 1140px;
+  margin: 0 auto;
+}
+.App {
+  position: relative;
+}
+.fontShade {
+  font-family: "Bungee Shade", sans-serif;
+}
+.fontAtkinson {
+  font-family: "Atkinson Hyperlegible", sans-serif;
+}
