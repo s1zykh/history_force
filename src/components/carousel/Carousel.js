@@ -36,7 +36,7 @@ const Carousel = ({ children }) => {
   const handleRightClick = () => {
     setOffset((state) => {
       const newState = state - 800;
-      const maxOffset = -(800 * 5);
+      const maxOffset = -(800 * 9);
       return Math.max(newState, maxOffset);
     });
     dispatch(setActivePage(1));
@@ -55,6 +55,25 @@ const Carousel = ({ children }) => {
       })
     );
   }, [children]);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "ArrowLeft" && offset !== 0) {
+        handleLeftClick();
+      } else if (
+        e.key === "ArrowRight" &&
+        Math.abs(Math.floor(offset / 800)) !== 9
+      ) {
+        handleRightClick();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [handleLeftClick, handleRightClick, offset]);
 
   return (
     <div className="main-container">
@@ -75,7 +94,7 @@ const Carousel = ({ children }) => {
           {pages}
         </div>
       </div>
-      {offset === -(800 * 5) ? null : (
+      {offset === -(800 * 9) ? null : (
         <FontAwesomeIcon
           icon={faChevronRight}
           className="arrowRigt"

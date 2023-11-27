@@ -1,0 +1,23 @@
+.button {
+  cursor: pointer;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 30px;
+  font-weight: 500;
+  background-color: #ffd9d9;
+  border-radius: 20px;
+  &__frontPage {
+    position: absolute;
+    left: 280px;
+    top: 280px;
+  }
+}
+
+.button__list {
+  position: absolute;
+  left: 330px;
+  top: 510px;
+}

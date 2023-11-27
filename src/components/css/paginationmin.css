@@ -1,0 +1,17 @@
+.pagination {
+  margin: 10px auto;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+.pagination li {
+  cursor: pointer;
+  font-weight: 500;
+  font-family: "Atkinson Hyperlegible", sans-serif;
+  font-size: 25px;
+}
+.pagination li.itemActive {
+  font-weight: 1000;
+  font-size: 28px;
+}/*# sourceMappingURL=paginationmin.css.map */

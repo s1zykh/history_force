@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background: url("./assets/img/photo1697479203.jpeg") 0 0/100% auto no-repeat;
+  background: url("./assets/img/photo1697479203.jpeg") 0 0 / cover no-repeat;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;

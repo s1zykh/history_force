@@ -1,0 +1,43 @@
+.frontPage {
+  position: absolute;
+  left: 400px;
+  top: 100px;
+  background-color: #ffebeb;
+  border-radius: 20px;
+  padding: 20px 40px;
+  min-width: 750px;
+  height: 350px;
+  &__content {
+    position: relative;
+  }
+  &__header {
+    text-align: center;
+    margin: 50px 0 50px 0;
+    font-size: 30px;
+  }
+  &__logo {
+    margin: 0 auto;
+    width: 80px;
+    img {
+      width: 100%;
+    }
+  }
+  &__data {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+    input {
+      width: 100px;
+      background-color: #ffebeb;
+      border-bottom: 1px solid black;
+      text-align: center;
+    }
+  }
+}
+
+.error {
+  color: red;
+  text-align: center;
+  padding: 10px 0;
+}

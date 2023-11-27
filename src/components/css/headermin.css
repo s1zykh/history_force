@@ -1,0 +1,21 @@
+.header {
+  position: relative;
+  border: 3px solid black;
+  border-radius: 20px;
+  width: 1140px;
+  padding: 10px 15px;
+}
+.header__mainIcon {
+  position: absolute;
+  top: 18px;
+  left: 30px;
+  width: 50px;
+}
+.header__mainIcon img {
+  width: 100%;
+}
+.header__text {
+  font-family: "Bungee Shade", sans-serif;
+  font-size: 30px;
+  text-align: center;
+}/*# sourceMappingURL=headermin.css.map */

@@ -1,0 +1,10 @@
+@charset "UTF-8";
+.edge {
+  position: absolute;
+  background-color: black;
+  height: 2px; /* Высота линии */
+  transform-origin: left center; /* Указываем точку для поворота */
+}
+.edge__active {
+  cursor: pointer;
+}/*# sourceMappingURL=linemin.css.map */

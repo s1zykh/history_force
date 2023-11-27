@@ -1,10 +1,14 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-
+import { UseLocalStorage } from "../../hooks/useLocalStorage";
 import apiService from "../../utils/apiService";
 
 const initialState = {
   questions: [],
   testsLoadingStatus: "idle",
+  testIsComplered: false,
+  dataUser: "",
+  isTimeEnded: false,
+  maximumCountOfPoints: 0,
 };
 
 export const fetchTests = createAsyncThunk("questionsList/fetchTests", () => {
@@ -15,7 +19,24 @@ export const fetchTests = createAsyncThunk("questionsList/fetchTests", () => {
 const questionsListSlice = createSlice({
   name: "questionsList",
   initialState,
-  reducers: {},
+  reducers: {
+    toggleTestIsComplered: (state, action) => {
+      state.testIsComplered = action.payload;
+    },
+    setDataUser: (state, action) => {
+      //const localStorage = UseLocalStorage(action.payload, "userData");
+      state.dataUser = action.payload;
+      // localStorage.setValue(action.payload);
+    },
+    toggleIsTimeEnded: (state, action) => {
+      state.isTimeEnded = action.payload;
+    },
+    addMaximumCountOfPoints: (state, action) => {
+      action.payload === "default"
+        ? (state.maximumCountOfPoints += 0.5)
+        : (state.maximumCountOfPoints += action.payload / 2);
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchTests.pending, (state) => {
@@ -32,6 +53,13 @@ const questionsListSlice = createSlice({
   },
 });
 
-const { reducer } = questionsListSlice;
+const { reducer, actions } = questionsListSlice;
+
+export const {
+  toggleTestIsComplered,
+  setDataUser,
+  toggleIsTimeEnded,
+  addMaximumCountOfPoints,
+} = actions;
 
 export default reducer;

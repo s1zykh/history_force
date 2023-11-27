@@ -14,10 +14,13 @@ const paginationSlice = createSlice({
     setNumberOfClick: (state, action) => {
       state.activePage = action.payload;
     },
+    clearActivePage: (state, action) => {
+      state.activePage = 1;
+    },
   },
 });
 
 const { reducer, actions } = paginationSlice;
-export const { setActivePage, setNumberOfClick } = actions;
+export const { setActivePage, setNumberOfClick, clearActivePage } = actions;
 
 export default reducer;
