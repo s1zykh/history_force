@@ -18,19 +18,6 @@ const QuestionsList = () => {
     return state.questionsList;
   });
 
-  const { isTimeEnded } = useSelector((state) => state.questionsList);
-
-  const countAnswers = useSelector((state) => {
-    if (countQuestions.questions.length > 0) {
-      return (
-        state.question.answers.length ===
-        countQuestions.questions[0].QuestionsAnswers.length
-      );
-    } else {
-      return false;
-    }
-  });
-
   const { testIsComplered } = useSelector((state) => state.questionsList);
 
   useEffect(() => {
@@ -58,16 +45,22 @@ const QuestionsList = () => {
   const render = renderList(countQuestions);
 
   return (
-    <div className="questionList">
-      {testIsComplered ? null : (
-        <div className="questionList__time fontAtkinson">
-          <Timer min={900} />
-        </div>
-      )}
-      {testIsComplered ? render : <Carousel>{render}</Carousel>}
-      {testIsComplered ? null : <Pagination count={countQuestions} />}
+    <div className="container">
+      <div className="questionList">
+        {testIsComplered ? null : (
+          <div className="questionList__time fontAtkinson">
+            <Timer min={20} />
+          </div>
+        )}
+        {testIsComplered ? render : <Carousel>{render}</Carousel>}
+        {testIsComplered ? null : <Pagination count={countQuestions} />}
 
-      <Button text={"Завершить"} to={"/result"} type={"button button__list"} />
+        <Button
+          text={"Завершить"}
+          to={"/result"}
+          type={"button button__list"}
+        />
+      </div>
     </div>
   );
 };

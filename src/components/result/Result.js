@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
+import useLocalStorage from "../../hooks/useLocalStorage";
 import Question from "../question/Question";
 import Header from "../header/Header";
 import Button from "../button/Button";
@@ -53,7 +54,7 @@ const Result = () => {
 export default Result;
 
 const FinishPage = () => {
-  const { dataUser } = useSelector((state) => state.questionsList);
+  const [value, setValue] = useLocalStorage("dataUser", "");
   const { answers } = useSelector((state) => state.question);
   const { maximumCountOfPoints } = useSelector((state) => state.questionsList);
 
@@ -88,8 +89,8 @@ const FinishPage = () => {
     <div className="result__user">
       <div className="result__frame">
         <div className="result__dataUser">
-          <div className="result__dataUser-data">{dataUser.split(" ")[1]}</div>
-          <div className="result__dataUser-data">{dataUser.split(" ")[0]}</div>
+          <div className="result__dataUser-data">{value.split(" ")[1]}</div>
+          <div className="result__dataUser-data">{value.split(" ")[0]}</div>
         </div>
         <div className="result__answers">
           Решили правильно:

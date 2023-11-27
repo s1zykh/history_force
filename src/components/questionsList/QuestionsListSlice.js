@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { UseLocalStorage } from "../../hooks/useLocalStorage";
 import apiService from "../../utils/apiService";
 
 const initialState = {
@@ -24,9 +23,7 @@ const questionsListSlice = createSlice({
       state.testIsComplered = action.payload;
     },
     setDataUser: (state, action) => {
-      //const localStorage = UseLocalStorage(action.payload, "userData");
       state.dataUser = action.payload;
-      // localStorage.setValue(action.payload);
     },
     toggleIsTimeEnded: (state, action) => {
       state.isTimeEnded = action.payload;

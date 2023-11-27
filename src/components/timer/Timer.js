@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
-import { toggleIsTimeEnded } from "../questionsList/QuestionsListSlice";
-import { clearActivePage } from "../pagination/paginationSlice";
+import { toggleTestIsComplered } from "../questionsList/QuestionsListSlice";
+
 import "./timer.scss";
 
 const Timer = ({ min }) => {
@@ -21,6 +21,8 @@ const Timer = ({ min }) => {
       } else {
         setHeartAnimation(false);
         clearInterval(timer);
+        dispatch(toggleTestIsComplered(true));
+        navigate("/result");
       }
     }, 1000);
 
