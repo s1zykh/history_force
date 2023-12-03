@@ -1,6 +1,9 @@
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { toggleTestIsComplered } from "../questionsList/QuestionsListSlice";
+import {
+  toggleTestIsComplered,
+  addCurrentQuestion,
+} from "../questionsList/QuestionsListSlice";
 import { clearActivePage } from "../pagination/paginationSlice";
 import { clearAnswers } from "../question/QuestionSlice";
 import useLocalStorage from "../../hooks/useLocalStorage";
@@ -19,11 +22,14 @@ const Button = ({ text, to, type, data, valid }) => {
     } else if (to === "/result") {
       dispatch(toggleTestIsComplered(true));
       navigate(to);
-    } else {
+    } else if (to === "testView") {
       navigate(to);
       dispatch(clearActivePage());
       dispatch(clearAnswers());
       dispatch(toggleTestIsComplered(false));
+    } else if (to === "/") {
+      navigate(to);
+      dispatch(addCurrentQuestion({}));
     }
   };
 
@@ -31,7 +37,7 @@ const Button = ({ text, to, type, data, valid }) => {
     <button
       className={type}
       onClick={handleClick}
-      type="button"
+      type={to !== "/" ? "button" : null}
       disabled={valid ? true : false}
     >
       {text}

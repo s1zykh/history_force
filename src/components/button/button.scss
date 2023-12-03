@@ -14,10 +14,13 @@
     left: 280px;
     top: 280px;
   }
-}
-
-.button__list {
-  position: absolute;
-  left: 330px;
-  top: 510px;
+  &__list {
+    position: absolute;
+    left: 330px;
+    top: 510px;
+  }
+  &__testList {
+    position: absolute;
+    top: 280px;
+  }
 }

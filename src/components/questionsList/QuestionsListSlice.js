@@ -3,6 +3,7 @@ import apiService from "../../utils/apiService";
 
 const initialState = {
   questions: [],
+  currentQuestion: {},
   testsLoadingStatus: "idle",
   testIsComplered: false,
   dataUser: "",
@@ -33,6 +34,9 @@ const questionsListSlice = createSlice({
         ? (state.maximumCountOfPoints += 0.5)
         : (state.maximumCountOfPoints += action.payload / 2);
     },
+    addCurrentQuestion: (state, action) => {
+      state.currentQuestion = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -57,6 +61,7 @@ export const {
   setDataUser,
   toggleIsTimeEnded,
   addMaximumCountOfPoints,
+  addCurrentQuestion,
 } = actions;
 
 export default reducer;

@@ -43,7 +43,7 @@ const Result = () => {
           <div className="result__wrapper-content">
             {render}
             <FinishPage />
-            <Button text={"Пройти снова"} to={"/"} type={"button"} />
+            <Button text={"Пройти снова"} to={"/testView"} type={"button"} />
           </div>
         </div>
       </div>

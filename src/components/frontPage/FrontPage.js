@@ -78,6 +78,7 @@ const FrontPage = () => {
               valid={validationMessage}
             />
           </form>
+          <Button text={"Назад"} to={"/"} type={"button button__testList"} />
         </div>
       </div>
     </div>

@@ -1,8 +1,5 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
-import { fetchTests } from "./QuestionsListSlice";
-
 import Timer from "../timer/Timer";
 import Question from "../question/Question";
 import Carousel from "../../components/carousel/Carousel";
@@ -20,14 +17,10 @@ const QuestionsList = () => {
 
   const { testIsComplered } = useSelector((state) => state.questionsList);
 
-  useEffect(() => {
-    dispatch(fetchTests());
-  }, []);
-
   const renderList = (list) => {
     let masItem = [];
-    if (list.questions.length > 0) {
-      const questionData = list.questions[0].QuestionsAnswers;
+    if (list.currentQuestion.id) {
+      const questionData = list.currentQuestion.QuestionsAnswers;
       for (let i = 1; i <= questionData.length; i++) {
         masItem.push(
           <Question
@@ -49,7 +42,7 @@ const QuestionsList = () => {
       <div className="questionList">
         {testIsComplered ? null : (
           <div className="questionList__time fontAtkinson">
-            <Timer min={20} />
+            <Timer min={2000} />
           </div>
         )}
         {testIsComplered ? render : <Carousel>{render}</Carousel>}
