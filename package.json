@@ -26,9 +26,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "server": "npx json-server questions.json --port 3001",
+    "start:dev": "concurrently \"react-scripts start\" \"npx json-server questions.json --port 3001\""
   },
   "eslintConfig": {
     "extends": [
@@ -47,5 +46,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
   }
 }
